@@ -982,6 +982,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
         menuThongKe.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         menuHoaDon.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
         menuNhanVien.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        menuGioHang.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
 
     }//GEN-LAST:event_menuHoaDonMouseClicked
 
