@@ -32,7 +32,7 @@ public class Service {
                String trangThai = rs.getString(6);
                String mauSac = rs.getString(7);
                String ngayTao = rs.getString(8);
-               list.add(new SanPham(id, mauSac, trangThai, soLuong, gia, trangThai, mauSac, ngayTao));
+               list.add(new SanPham(id, ma, ten, soLuong, gia, trangThai, mauSac, ngayTao));
             }
             conn.close();
         }catch(Exception e){

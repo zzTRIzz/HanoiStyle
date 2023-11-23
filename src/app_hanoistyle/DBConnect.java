@@ -12,9 +12,9 @@ import java.sql.*;
  * @author Dell
  */
 public class DBConnect {
-     static String url = "jdbc:sqlserver://;serverName=Dell;databaseName=xuong";
-   static String username = "sa";
-   static String password = "06112004";
+     static String url = "jdbc:sqlserver://;serverName=localhost;databaseName=ASM_SOF203";
+   static String username = "linh";
+   static String password = "tuanlinh123";
    public static Connection getConnection() throws SQLException{
        return DriverManager.getConnection(url,username,password);
    }
