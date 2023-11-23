@@ -67,10 +67,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         hoadonPanel = new javax.swing.JPanel();
         hoadonPanel1 = new javax.swing.JPanel();
@@ -95,6 +92,9 @@ public class app_hanoistyle extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jLabel21 = new javax.swing.JLabel();
         giohangPanel = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -351,7 +351,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
         }
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Noto Sans", 1, 14), new java.awt.Color(204, 0, 0))); // NOI18N
-        jPanel3.setLayout(new java.awt.GridLayout(6, 1));
+        jPanel3.setLayout(new java.awt.GridLayout(3, 1));
 
         jButton1.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 0, 0));
@@ -370,29 +370,11 @@ public class app_hanoistyle extends javax.swing.JFrame {
         });
         jPanel3.add(jButton2);
 
-        jButton3.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 0, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trash.png"))); // NOI18N
-        jButton3.setText("   Xóa");
-        jPanel3.add(jButton3);
-
         jButton4.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 0, 0));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/find-22.png"))); // NOI18N
         jButton4.setText("  Tìm ");
         jPanel3.add(jButton4);
-
-        jButton5.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(153, 0, 0));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/read.png"))); // NOI18N
-        jButton5.setText("  Đọc");
-        jPanel3.add(jButton5);
-
-        jButton6.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(153, 0, 0));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/write.png"))); // NOI18N
-        jButton6.setText("  Ghi");
-        jPanel3.add(jButton6);
 
         jLabel13.setBackground(new java.awt.Color(255, 153, 153));
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 72)); // NOI18N
@@ -419,12 +401,12 @@ public class app_hanoistyle extends javax.swing.JFrame {
             sanPhamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sanPhamPanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addGap(26, 26, 26)
                 .addGroup(sanPhamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
 
@@ -557,7 +539,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel25))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(jRadioButton1)
@@ -578,6 +560,10 @@ public class app_hanoistyle extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(6).setHeaderValue("Mã nhân viên");
+            jTable2.getColumnModel().getColumn(7).setHeaderValue("Trạng thái");
+        }
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Noto Sans", 1, 14), new java.awt.Color(204, 0, 0))); // NOI18N
         jPanel5.setLayout(new java.awt.GridLayout(2, 1));
@@ -585,14 +571,31 @@ public class app_hanoistyle extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(153, 0, 0));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/save-22.png"))); // NOI18N
-        jButton7.setText("Xác nhận hóa đơn");
+        jButton7.setText("Thanh toán");
         jPanel5.add(jButton7);
 
         jButton12.setFont(new java.awt.Font("Dosis", 1, 14)); // NOI18N
         jButton12.setForeground(new java.awt.Color(153, 0, 0));
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trash.png"))); // NOI18N
-        jButton12.setText("Hủy hóa đơn");
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/new.png"))); // NOI18N
+        jButton12.setText("Tạo hóa đơn");
         jPanel5.add(jButton12);
+
+        jTable6.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "STT", "Mã sản phẩm", "Tên sản phẩm", "Số lượng ", "Đơn giá", "Thành tiền"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable6);
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel21.setText("Giỏ hàng");
 
         javax.swing.GroupLayout hoadonPanel1Layout = new javax.swing.GroupLayout(hoadonPanel1);
         hoadonPanel1.setLayout(hoadonPanel1Layout);
@@ -600,23 +603,37 @@ public class app_hanoistyle extends javax.swing.JFrame {
             hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(hoadonPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, hoadonPanel1Layout.createSequentialGroup()
+                .addGroup(hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(hoadonPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1001, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addGroup(hoadonPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6)
+                            .addGroup(hoadonPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         hoadonPanel1Layout.setVerticalGroup(
             hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hoadonPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(hoadonPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(hoadonPanel1Layout.createSequentialGroup()
+                        .addContainerGap(29, Short.MAX_VALUE)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
 
@@ -637,7 +654,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
             .addGroup(hoadonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(hoadonPanelLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(hoadonPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
+                    .addComponent(hoadonPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -752,7 +769,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jButton8)
                                 .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(594, Short.MAX_VALUE))
+                .addContainerGap(584, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -771,7 +788,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Báo cáo doanh thu", jPanel1);
@@ -1099,10 +1116,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -1122,6 +1136,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1148,12 +1163,14 @@ public class app_hanoistyle extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
