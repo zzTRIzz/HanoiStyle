@@ -10,6 +10,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,10 +22,28 @@ public class app_hanoistyle extends javax.swing.JFrame {
      * Creates new form app_hanoistyle
      */
     //ok
+    DefaultTableModel model;
+    Service sv = new Service();
     public app_hanoistyle() {
         initComponents();
+        loadData();
     }
-
+    void loadData(){
+        model = (DefaultTableModel) tblSanPham.getModel();
+        model.setRowCount(0);
+        for (SanPham service : sv.getAll()) {
+            model.addRow(new Object[]{
+                service.getId(),
+                service.getMaSanPham(),
+                service.getTenSanPham(),
+                service.getSoLuongTon(),
+                service.getGiaBan(),
+                service.getTrangThai(),
+                service.getMauSac(),
+                service.getNgayTao()
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,7 +83,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSanPham = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -140,7 +159,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
         menuHoaDon.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         menuHoaDon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuHoaDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bill.png"))); // NOI18N
-        menuHoaDon.setText(" Hóa đơn");
+        menuHoaDon.setText("Bán Hàng");
         menuHoaDon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         menuHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -328,24 +347,19 @@ public class app_hanoistyle extends javax.swing.JFrame {
                 .addGap(53, 53, 53))
         );
 
-        jTable1.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSanPham.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        tblSanPham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã", "Tên", "Thương hiệu", "Loại", "Size", "Chất liệu", "Màu sắc", "Đơn bán", "Số lượng", "Ngày nhập"
+                "id", "Mã", "Tên", "số lượng", "giá bán", "trạng thái", "màu sắc", "ngày tạo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(8).setHeaderValue("Đơn bán");
-            jTable1.getColumnModel().getColumn(9).setHeaderValue("Số lượng");
-            jTable1.getColumnModel().getColumn(10).setHeaderValue("Ngày nhập");
-        }
+        jScrollPane1.setViewportView(tblSanPham);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Noto Sans", 1, 14), new java.awt.Color(204, 0, 0))); // NOI18N
         jPanel3.setLayout(new java.awt.GridLayout(3, 1));
@@ -613,7 +627,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
                             .addGroup(hoadonPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel21)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         hoadonPanel1Layout.setVerticalGroup(
             hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -623,10 +637,11 @@ public class app_hanoistyle extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(hoadonPanel1Layout.createSequentialGroup()
-                        .addContainerGap(39, Short.MAX_VALUE)
+                        .addContainerGap()
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 29, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(hoadonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -946,7 +961,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(Panel_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 622, Short.MAX_VALUE)
+                    .addComponent(Panel_Main, javax.swing.GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE)
                     .addGap(0, 0, 0)))
         );
 
@@ -1132,7 +1147,6 @@ public class app_hanoistyle extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
@@ -1158,6 +1172,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
     private javax.swing.JLabel menuThongKe;
     private javax.swing.JPanel nhanvienPanel;
     private javax.swing.JPanel sanPhamPanel;
+    private javax.swing.JTable tblSanPham;
     private javax.swing.JPanel thongkePanel;
     // End of variables declaration//GEN-END:variables
 }
