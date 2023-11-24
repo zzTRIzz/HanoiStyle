@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package app_hanoistyle;
+package opp;
 
 /**
  *
@@ -13,7 +13,7 @@ public class SanPham {
     String maSanPham;
     String tenSanPham;
     Integer soLuongTon;
-    Float giaBan;
+    Integer giaBan;
     String trangThai;
     String mauSac;
     String ngayTao;
@@ -21,7 +21,7 @@ public class SanPham {
     public SanPham() {
     }
 
-    public SanPham(Integer id, String maSanPham, String tenSanPham, Integer soLuongTon, Float giaBan, String trangThai, String mauSac, String ngayTao) {
+    public SanPham(Integer id, String maSanPham, String tenSanPham, Integer soLuongTon, Integer giaBan, String trangThai, String mauSac, String ngayTao) {
         this.id = id;
         this.maSanPham = maSanPham;
         this.tenSanPham = tenSanPham;
@@ -64,11 +64,11 @@ public class SanPham {
         this.soLuongTon = soLuongTon;
     }
 
-    public Float getGiaBan() {
+    public Integer getGiaBan() {
         return giaBan;
     }
 
-    public void setGiaBan(Float giaBan) {
+    public void setGiaBan(Integer giaBan) {
         this.giaBan = giaBan;
     }
 
@@ -95,5 +95,7 @@ public class SanPham {
     public void setNgayTao(String ngayTao) {
         this.ngayTao = ngayTao;
     }
+
+
     
 }

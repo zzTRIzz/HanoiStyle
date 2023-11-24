@@ -2,10 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package app_hanoistyle;
+package serviceDB;
 
 
 
+import opp.SanPham;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.*;
@@ -13,7 +14,7 @@ import java.sql.*;
  *
  * @author Dell
  */
-public class Service {
+public class ServiceSanPham {
     List<SanPham> list = new ArrayList<>();
     
     public List<SanPham> getAll(){
@@ -28,7 +29,7 @@ public class Service {
                String ma = rs.getString(2);
                String ten = rs.getString(3);
                Integer soLuong = rs.getInt(4);
-               Float gia = rs.getFloat(5);
+               Integer gia = rs.getInt(5);
                String trangThai = rs.getString(6);
                String mauSac = rs.getString(7);
                String ngayTao = rs.getString(8);
@@ -39,5 +40,20 @@ public class Service {
             e.printStackTrace();
         }
         return list;
+    }
+    public static int updateSanPham(String maSP,Integer soLuongTon){
+        int kq =-1;
+        try {
+            Connection conn = DBConnect.getConnection();
+            String sql="update SanPham set so_luong_ton=? where ma_san_pham=? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, soLuongTon);
+            ps.setString(2, maSP);           
+            kq=ps.executeUpdate();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return kq;
     }
 }
