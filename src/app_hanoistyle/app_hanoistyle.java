@@ -1217,6 +1217,7 @@ public class app_hanoistyle extends javax.swing.JFrame {
             
         Integer soLuongCon =soLuongTon -soLuong;
        System.out.println(soLuongCon);
+            System.out.println("Helo");
            
         DefaultTableModel model1 = (DefaultTableModel) tblGioHang.getModel();
           
