@@ -1465,7 +1465,15 @@ public class app_hanoistyle extends javax.swing.JFrame {
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblGioHang.getModel();
 
+        // Xóa tất cả các dòng từ mô hình
+        model.setRowCount(0);
+
+        // Xóa tất cả các cột từ mô hình
+
+
+        
         String maHD = txtMaHoaDon.getText();
         String trangThai = "Da thanh toan";
         Integer tongTien = Integer.valueOf(txtTongTien.getText());
@@ -1477,9 +1485,24 @@ public class app_hanoistyle extends javax.swing.JFrame {
         Integer tienThua = khachTra - bill;
         txtThua.setText(tienThua.toString());
         //Thanh toan xong xoa du lieu
-        ServiceGioHang.deleteGioHangTheoMaHD(maHD);
-        ServiceHoaDon.deleteHoaDonTheoMaHD(maHD);
-        loadDataGioHangbyMa(maHD);
+        
+//        
+//        model = (DefaultTableModel) tblHoaDon.getModel();
+//        model.setRowCount(0);
+//        int stt = 1;
+//        for (HoaDon service : svHD.getHoaDonChuaThanhToan(maHD)) {
+//            model.addRow(new Object[]{
+//                stt++,
+//                service.getMaHD(),
+//                service.getNgayTao(),
+//                service.getTenNguoiTao(),
+//                service.getTrangThai()
+//
+//            });
+//        }
+//        ServiceGioHang.deleteGioHangTheoMaHD(maHD);
+//        ServiceHoaDon.deleteHoaDonTheoMaHD(maHD);
+
         loadDataHoaDon();
     }//GEN-LAST:event_btnThanhToanActionPerformed
 

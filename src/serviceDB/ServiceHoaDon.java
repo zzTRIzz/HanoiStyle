@@ -22,7 +22,7 @@ public class ServiceHoaDon {
     public List<HoaDon> getHoaDon(){
         listHoaDon.clear();
         try {
-            String sql ="select id, ma,ngay_tao,ten_nguoi_tao,id_khach_hang,tong_tien,trang_thai,id_nhan_vien from HoaDon";
+            String sql ="select id, ma,ngay_tao,ten_nguoi_tao,id_khach_hang,tong_tien,trang_thai,id_nhan_vien from HoaDon where trang_thai <> 'Da thanh toan' ";
             Connection conn = DBConnect.getConnection();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(sql);
@@ -202,4 +202,32 @@ public class ServiceHoaDon {
             return null;
         }
     }
+    
+//    public List<HoaDon> getHoaDonChuaThanhToan(String maHDT){
+//        listHoaDon.clear();
+//        try {
+//            String sql ="select id, ma,ngay_tao,ten_nguoi_tao,id_khach_hang,tong_tien,trang_thai,id_nhan_vien from HoaDon where ma <> ?";
+//            Connection conn = DBConnect.getConnection();
+//            PreparedStatement ps = conn.prepareStatement(sql);
+//            ps.setString(1,maHDT);
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()) {                
+//                Integer id =rs.getInt(1);
+//                String ma =rs.getString(2);
+//                String ngayTao =rs.getString(3);
+//                String ten =rs.getString(4);
+//                Integer idKH =rs.getInt(5);
+//                Integer tongTien =rs.getInt(6);
+//                String trangThai =rs.getString(7);
+//                Integer idNB =rs.getInt(8);
+//                
+//                listHoaDon.add(new HoaDon(id, idKH, idNB, ma, ngayTao, ten, trangThai, tongTien));
+//
+//            }
+//            conn.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return listHoaDon;
+//    }
 }
