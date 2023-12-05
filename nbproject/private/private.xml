@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/D:/Xuong/HanoiStyle/src/app_hanoistyle/app_hanoistyle.java</file>
+            <file>file:/D:/Xuong/HanoiStyle/src/serviceDB/ServiceHoaDon.java</file>
+        </group>
+>>>>>>> 85f096d4931f021a58f8fa613b53f00d002c6cfd
     </open-files>
 </project-private>
