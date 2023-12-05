@@ -12,23 +12,31 @@ public class SanPham {
     Integer id;
     String maSanPham;
     String tenSanPham;
+    String thuongHieu;
+    String loai;
+    String size;
+    String chatLieu;
+    String mauSac;
+    String trangThai;
     Integer soLuongTon;
     Float giaBan;
-    String trangThai;
-    String mauSac;
     String ngayTao;
 
     public SanPham() {
     }
 
-    public SanPham(Integer id, String maSanPham, String tenSanPham, Integer soLuongTon, Float giaBan, String trangThai, String mauSac, String ngayTao) {
+    public SanPham(Integer id, String maSanPham, String tenSanPham, String thuongHieu, String loai, String size, String chatLieu, String mauSac, String trangThai, Integer soLuongTon, Float giaBan, String ngayTao) {
         this.id = id;
         this.maSanPham = maSanPham;
         this.tenSanPham = tenSanPham;
+        this.thuongHieu = thuongHieu;
+        this.loai = loai;
+        this.size = size;
+        this.chatLieu = chatLieu;
+        this.mauSac = mauSac;
+        this.trangThai = trangThai;
         this.soLuongTon = soLuongTon;
         this.giaBan = giaBan;
-        this.trangThai = trangThai;
-        this.mauSac = mauSac;
         this.ngayTao = ngayTao;
     }
 
@@ -56,6 +64,54 @@ public class SanPham {
         this.tenSanPham = tenSanPham;
     }
 
+    public String getThuongHieu() {
+        return thuongHieu;
+    }
+
+    public void setThuongHieu(String thuongHieu) {
+        this.thuongHieu = thuongHieu;
+    }
+
+    public String getLoai() {
+        return loai;
+    }
+
+    public void setLoai(String loai) {
+        this.loai = loai;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getChatLieu() {
+        return chatLieu;
+    }
+
+    public void setChatLieu(String chatLieu) {
+        this.chatLieu = chatLieu;
+    }
+
+    public String getMauSac() {
+        return mauSac;
+    }
+
+    public void setMauSac(String mauSac) {
+        this.mauSac = mauSac;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
     public Integer getSoLuongTon() {
         return soLuongTon;
     }
@@ -72,22 +128,6 @@ public class SanPham {
         this.giaBan = giaBan;
     }
 
-    public String getTrangThai() {
-        return trangThai;
-    }
-
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
-    }
-
-    public String getMauSac() {
-        return mauSac;
-    }
-
-    public void setMauSac(String mauSac) {
-        this.mauSac = mauSac;
-    }
-
     public String getNgayTao() {
         return ngayTao;
     }
@@ -95,5 +135,8 @@ public class SanPham {
     public void setNgayTao(String ngayTao) {
         this.ngayTao = ngayTao;
     }
+
+    
+    
     
 }
