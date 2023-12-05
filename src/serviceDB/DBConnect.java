@@ -4,20 +4,21 @@
  */
 package serviceDB;
 
-
 import java.sql.*;
-
 /**
  *
- * @author Dell
+ * @author ADMIN
  */
 public class DBConnect {
-     static String url = "jdbc:sqlserver://;serverName=localhost;databaseName=ASM_SOF203";
-   static String username = "linh";
-   static String password = "tuanlinh123";
-   public static Connection getConnection() throws SQLException{
-       return DriverManager.getConnection(url,username,password);
-   }
+    static String url = "jdbc:sqlserver://;serverName=localhost;databaseName=new;encrypt=true;trustServerCertificate=true";
+    static  String username = "sa";
+    static String password = "0973665656";
+    
+    public static Connection getConnection() throws SQLException {
+        return  DriverManager.getConnection(url, username, password);
+    }
+    
+    
     public static void main(String[] args) throws SQLException {
         getConnection();
     }
